@@ -11,7 +11,7 @@ $( document ).ready(function() {
         }
     });
 
-    var windowWidth = document.documentElement.clientWidth;
+    let windowWidth = document.documentElement.clientWidth;
     // Закрытие меню при клике не на элементе
     $(document).on('click', function(e) {
         if(windowWidth < 1200) {
@@ -24,9 +24,7 @@ $( document ).ready(function() {
         e.stopPropagation();
     });
 
-
-
-    var $page = $('html, body');
+    let $page = $('html, body');
     $('a[href*="#"]').click(function() {
         $page.animate({
             scrollTop: $($.attr(this, 'href')).offset().top - 71
@@ -35,7 +33,7 @@ $( document ).ready(function() {
     });
 
     $('.menu__link').on('click', function () {
-        var body = $('body'),
+        let body = $('body'),
             menu_active = body.hasClass('menu-open');
         if(menu_active) {
             body.removeClass('menu-open');
@@ -74,6 +72,25 @@ $( document ).ready(function() {
         }
     });
 
+        $( ".js-show-start" ).animate({
+            opacity: 1,
+        }, 1500, "linear", function(){
+        });
+
+    $(function(){
+        $(window).scroll(function(){
+            if($(window).scrollTop() > 100) {
+                $('#scroll_top').show(300);
+            } else {
+                $('#scroll_top').hide(300);
+            }
+        });
+
+        $('#scroll_top').click(function(){
+            $('html, body').animate({scrollTop: 0}, 600);
+            return false;
+        });
+    });
 });
 
 
