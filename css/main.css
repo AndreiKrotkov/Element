@@ -549,11 +549,17 @@ body {
         background-color: #ffda34;
         font-weight: 900;
     }
+    .contacts__form {}
+
+    .contacts__map {
+        width: 100%;
+        height: 400px;
+    }
     /* SECTION contacts END */
 
     /*  SECTION FOOT  */
     .foot {
-        padding: 1rem 0;
+        padding: 2rem 0;
         background-color: #064f85;
     }
     .foot-cop {
@@ -772,6 +778,10 @@ body {
 
     .foot-cop {
         padding: 0;
+    }
+
+    .foot {
+        padding: 1rem 0;
     }
 }
 
