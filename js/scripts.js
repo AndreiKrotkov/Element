@@ -16,7 +16,6 @@ $( document ).ready(function() {
     $(document).on('click', function(e) {
         if(windowWidth < 1200) {
             if (!$(e.target).closest(".js-navig").length && !$(e.target).closest(".js_menu").length) {
-                console.log('yes')
                 $('.menu-open').removeClass('menu-open');
                 $('.js-menu-categories-desc').hide(300);
             }
@@ -62,20 +61,25 @@ $( document ).ready(function() {
 
         checkFormValid = $formReg.find('.wrp__input-form').hasClass('error-inp');
 
-        console.log(checkFormValid);
+        console.log(!checkFormValid);
         if(!checkFormValid) {
-            console.log('все хорошо')
             $form.serialize()
         } else {
-            console.log('все плохо')
             checkFormValid = false;
         }
     });
 
-        $( ".js-show-start" ).animate({
-            opacity: 1,
-        }, 1500, "linear", function(){
-        });
+    $(".js-change-email").on('input', function (e) {
+        $(this).closest('.wrp__input-form').removeClass('error-inp');
+    });
+    $(".js-change-name").on('input', function (e) {
+        $(this).closest('.wrp__input-form').removeClass('error-inp');
+    });
+
+    $( ".js-show-start" ).animate({
+        opacity: 1,
+    }, 1500, "linear", function(){
+    });
 
     $(function(){
         $(window).scroll(function(){

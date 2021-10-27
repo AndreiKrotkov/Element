@@ -536,7 +536,8 @@ body {
         outline: none;
     }
     .contacts__info .error-inp input{
-        border-color: #ff0036;
+        /*border-color: #ff0036;*/
+        border-bottom: 2px solid #ff0036!important;
     }
     .contacts__info .bttn {
         text-align: center;
